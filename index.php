@@ -9,8 +9,10 @@
   </head>
 
   <body>
+    <div class="grafici">
+      <canvas id="myChart"></canvas>
 
-    <canvas id="myChart"></canvas>
+    </div>
 
     <script src="main.js" charset="utf-8"></script>
   </body>

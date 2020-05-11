@@ -29,11 +29,21 @@ $(document).ready(function() {
                 'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)'
               ],
-              data: myDataset
+              data: myDataset,
+              borderWidth: 1
             }]
           },
           // Configuration options go here
-          options: {}
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          } //fine options
+
         });
       },
       error : function (richiesta, stato, errore) {
