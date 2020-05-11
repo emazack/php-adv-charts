@@ -5,6 +5,6 @@
 
 
 
-  echo json_encode($);
+  echo json_encode($myData);
 
  ?>
