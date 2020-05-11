@@ -3,7 +3,7 @@ $(document).ready(function() {
   function printLineChart() {
 
     $.ajax({
-      url : "database.php",
+      url : "server.php",
       method : "GET",
       success: function (myDataset) {
         var ctx = $("#myChart");
