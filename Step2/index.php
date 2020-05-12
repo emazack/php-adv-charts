@@ -10,7 +10,8 @@
 
   <body>
     <div class="grafici">
-      <canvas id="myChart"></canvas>
+      <canvas id="linear-chart"></canvas>
+      <canvas id="pie-chart"></canvas>
 
     </div>
 
