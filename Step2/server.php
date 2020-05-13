@@ -5,6 +5,7 @@
 
   $typeLineChart = $graphs["fatturato"]['type'];
   $dataLineChart = $graphs["fatturato"]['data'];
+  
   $typePieChart = $graphs["fatturato_by_agent"]['type'];
   $dataPieChart = [];
   $labelsPieChart = [];

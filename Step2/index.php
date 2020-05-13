@@ -12,7 +12,6 @@
     <div class="grafici">
       <canvas id="linear-chart"></canvas>
       <canvas id="pie-chart"></canvas>
-
     </div>
 
     <script src="main.js" charset="utf-8"></script>

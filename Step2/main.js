@@ -88,6 +88,7 @@ $(document).ready(function() {
     method : "GET",
     success: function (myDataset) {
       printAChart(myDataset['typeLineChart'], myDataset['dataLineChart'], labelsMounth, '#linear-chart', true);
+
       printAChart(myDataset['typePieChart'], myDataset['dataPieChart'], myDataset['labelsPieChart'], '#pie-chart', false);
     },
     error : function (richiesta, stato, errore) {
