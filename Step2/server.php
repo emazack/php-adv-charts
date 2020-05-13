@@ -3,15 +3,22 @@
   header('Content-Type: application/json');
   require_once "database.php";
 
-  $dataComplete = [];
+  $typeLineChart = $graphs["fatturato"]['type'];
+  $dataLineChart = $graphs["fatturato"]['data'];
+  $typePieChart = $graphs["fatturato_by_agent"]['type'];
+  $dataPieChart = [];
+  $labelsPieChart = [];
 
-  foreach ($graphs as $fatturati => $value) {
-    $tipodigrafico = $value['type'];
-    $datasets = $value['data'];
-    $dataComplete[$tipodigrafico] = $datasets;
-  };
+  $completeData = 
 
-  echo json_encode($dataComplete);
+  foreach ($graphs["fatturato_by_agent"]['data'] as $label => $data) {
+    $dataPieChart[] = $data;
+    $labelsPieChart[] = $label;
+  }
+
+
+
+  echo json_encode($labelsPieChart);
 
 
  ?>
