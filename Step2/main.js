@@ -87,7 +87,8 @@ $(document).ready(function() {
     url : "server.php",
     method : "GET",
     success: function (myDataset) {
-      console.log(myDataset);
+      printAChart(myDataset['typeLineChart'], myDataset['dataLineChart'], labelsMounth, '#linear-chart', true);
+      printAChart(myDataset['typePieChart'], myDataset['dataPieChart'], myDataset['labelsPieChart'], '#pie-chart', false);
     },
     error : function (richiesta, stato, errore) {
       alert("E' avvenuto un errore. " + errore);

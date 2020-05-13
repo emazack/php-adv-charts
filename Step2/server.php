@@ -15,11 +15,11 @@
   }
 
   $completeData = [
-    $typeLineChart,
-    $dataLineChart,
-    $typePieChart,
-    $dataPieChart,
-    $labelsPieChart
+    'typeLineChart' => $typeLineChart,
+    'dataLineChart' => $dataLineChart,
+    'typePieChart' => $typePieChart,
+    'dataPieChart' => $dataPieChart,
+    'labelsPieChart' => $labelsPieChart
   ];
 
   echo json_encode($completeData);
