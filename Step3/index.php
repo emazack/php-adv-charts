@@ -10,8 +10,9 @@
 
   <body>
     <div class="grafici">
-      <canvas id="myChart"></canvas>
-
+      <canvas id="guest"></canvas>
+      <canvas id="employee"></canvas>
+      <canvas id="clevel"></canvas>
     </div>
 
     <script src="main.js" charset="utf-8"></script>
