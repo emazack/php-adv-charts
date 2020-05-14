@@ -3,8 +3,10 @@
   header('Content-Type: application/json');
   require_once "database.php";
 
+  $prova = $_GET['level'] ?? 'guest';
 
 
-  echo json_encode($myData);
+
+  echo $prova;
 
  ?>
