@@ -18,8 +18,8 @@
 
 
   foreach ($graphs["fatturato_by_agent"]['data'] as $label => $data) {
-    $dataPieChart[] = $data;
-    $labelsPieChart[] = $label;
+    $dataPieEmployee[] = $data;
+    $labelsPieEmployee[] = $label;
   }
 
 // terzo grafico
@@ -33,21 +33,37 @@
     $labelsLineClevel[] = $label;
   }
 
-
-
-  $completeData = [
-    'typeLineChart' => $typeLineGuest,
-    'dataLineChart' => $dataLineGuest,
-    'levelAccessGuest' => $levelAccessGuest,
-    'typePieEmployee' => $typePieEmployee,
-    'dataPieEmployee' => $dataPieEmployee,
-    'labelsPieEmployee' => $labelsPieEmployee,
-    'levelAccessEmployee' => $levelAccessEmployee,
-    'typeLineClevel' => $typeLineClevel,
-    'dataLineClevel' => $dataLineClevel,
-    'labelsLineClevel' => $labelsLineClevel,
-    'levelAccessClevel' => $levelAccessClevel
-  ];
+  if ($level == 'guest') {
+    $completeData = [
+      'typeLineChart' => $typeLineGuest,
+      'dataLineChart' => $dataLineGuest,
+      'levelAccessGuest' => $levelAccessGuest,
+    ];
+  } if ($level == 'employee') {
+    $completeData = [
+      'typeLineChart' => $typeLineGuest,
+      'dataLineChart' => $dataLineGuest,
+      'levelAccessGuest' => $levelAccessGuest,
+      'typePieEmployee' => $typePieEmployee,
+      'dataPieEmployee' => $dataPieEmployee,
+      'labelsPieEmployee' => $labelsPieEmployee,
+      'levelAccessEmployee' => $levelAccessEmployee,
+    ];
+  } if ($level == 'clevel') {
+    $completeData = [
+      'typeLineChart' => $typeLineGuest,
+      'dataLineChart' => $dataLineGuest,
+      'levelAccessGuest' => $levelAccessGuest,
+      'typePieEmployee' => $typePieEmployee,
+      'dataPieEmployee' => $dataPieEmployee,
+      'labelsPieEmployee' => $labelsPieEmployee,
+      'levelAccessEmployee' => $levelAccessEmployee,
+      'typeLineClevel' => $typeLineClevel,
+      'dataLineClevel' => $dataLineClevel,
+      'labelsLineClevel' => $labelsLineClevel,
+      'levelAccessClevel' => $levelAccessClevel
+    ];
+  }
 
   echo json_encode($completeData);
 

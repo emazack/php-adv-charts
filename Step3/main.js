@@ -1,82 +1,138 @@
 $(document).ready(function() {
 
-  function printAChart(typeOfGraph, myDataset, mylabels, selector, optionTrue) {
-    if (optionTrue) {
-      var ctx = $(selector);
-      var chart = new Chart(ctx, {
-        type: typeOfGraph,
-        data: {
-          labels: mylabels,
-          datasets: [{
-            label: 'Vendite',
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            data: myDataset,
-            borderWidth: 1
+  // FUNZIONE
+
+  function getLevelFunction() {
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var level = url.searchParams.get("level");
+    return level;
+  }
+
+  // FUNZIONE
+
+  function printChartGuest(selector, typeOfGraph, mylabels, mysecondarylabel, myDataset) {
+    var ctx = $(selector);
+    var chart = new Chart(ctx, {
+      type: typeOfGraph,
+      data: {
+        labels: mylabels,
+        datasets: [{
+          label: mysecondarylabel,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          data: myDataset,
+          borderWidth: 1
+        }]
+      },
+      // Configuration options go here
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
           }]
-        },
-        // Configuration options go here
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        } //fine options
+        }
+      } //fine options
 
-      }); //fine charts con opzioni attive
+    }); //fine charts con opzioni attive
 
-    } else {
-      var ctx = $(selector);
-      var chart = new Chart(ctx, {
-        type: typeOfGraph,
-        data: {
-          labels: mylabels,
-          datasets: [{
-            label: 'Vendite',
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            data: myDataset,
-            borderWidth: 1
+  }
+
+  // FUNZIONE
+
+  function printChartEmployee(selector, typeOfGraph, mylabels, myDataset) {
+    var ctx = $(selector);
+    var chart = new Chart(ctx, {
+      type: typeOfGraph,
+      data: {
+        labels: mylabels,
+        datasets: [{
+          label: 'Vendite',
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          data: myDataset,
+          borderWidth: 1
+        }]
+      },
+      // Configuration options go here
+      options: {} //fine options
+    }); //fine charts con opzioni disattivate
+
+  }
+
+  // FUNZIONE
+
+  function printChartClevel(selector, typeOfGraph, mylabels, mysecondarylabel, myDataset) {
+    var ctx = $(selector);
+    var chart = new Chart(ctx, {
+      type: typeOfGraph,
+      data: {
+        labels: mylabels,
+        datasets: [{
+          label: mysecondarylabel,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          data: myDataset,
+          borderWidth: 1
+        }]
+      },
+      // Configuration options go here
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
           }]
-        },
-        // Configuration options go here
-        options: {} //fine options
-      }); //fine charts con opzioni disattivate
+        }
+      } //fine options
 
-    }
-
-  };
+    }); //fine charts con opzioni attive
+  }
 
   /////////////////////////////// ESECUZIONE
 
@@ -86,8 +142,18 @@ $(document).ready(function() {
   $.ajax({
     url : "server.php",
     method : "GET",
+    data: "level=" + getLevelFunction(),
     success: function (myDataset) {
       console.log(myDataset);
+      if (myDataset['levelAccessGuest']) {
+        printChartGuest('#guest', myDataset['typeLineChart'], labelsMounth, 'Vendite', myDataset['dataLineChart']);
+      }
+      if (myDataset['levelAccessEmployee']) {
+        printChartEmployee('#employee', myDataset['typePieEmployee'], myDataset['labelsPieEmployee'], myDataset['dataPieEmployee']);
+      }
+      if (myDataset['levelAccessClevel']) {
+        printChartClevel('#clevel', myDataset['typeLineClevel'], labelsMounth, myDataset['labelsLineClevel'], myDataset['dataLineClevel']);
+      }
     },
     error : function (richiesta, stato, errore) {
       alert("E' avvenuto un errore. " + errore);
